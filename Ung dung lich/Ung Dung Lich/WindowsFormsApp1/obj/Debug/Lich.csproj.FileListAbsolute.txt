@@ -1,0 +1,11 @@
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\Lich.csprojAssemblyReference.cache
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\Lich.csproj.GenerateResource.cache
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Plan.resources
+D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AJob.resources
