@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPreviousMonth = new System.Windows.Forms.Button();
+            this.btnNextMonth = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.chkNotify = new System.Windows.Forms.CheckBox();
             this.btnToDay = new System.Windows.Forms.Button();
             this.dtpkDate = new System.Windows.Forms.DateTimePicker();
+            this.tmNotify = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,18 +56,38 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPreviousMonth);
+            this.panel1.Controls.Add(this.btnNextMonth);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pnMatrixCalendar);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 604);
+            this.panel1.Size = new System.Drawing.Size(987, 623);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPreviousMonth
+            // 
+            this.btnPreviousMonth.Location = new System.Drawing.Point(7, 308);
+            this.btnPreviousMonth.Name = "btnPreviousMonth";
+            this.btnPreviousMonth.Size = new System.Drawing.Size(79, 58);
+            this.btnPreviousMonth.TabIndex = 7;
+            this.btnPreviousMonth.Text = "Tháng trước";
+            this.btnPreviousMonth.UseVisualStyleBackColor = true;
+            this.btnPreviousMonth.Click += new System.EventHandler(this.btnPreviousMonth_Click);
+            // 
+            // btnNextMonth
+            // 
+            this.btnNextMonth.Location = new System.Drawing.Point(905, 308);
+            this.btnNextMonth.Name = "btnNextMonth";
+            this.btnNextMonth.Size = new System.Drawing.Size(79, 58);
+            this.btnNextMonth.TabIndex = 7;
+            this.btnNextMonth.Text = "Tháng sau";
+            this.btnNextMonth.UseVisualStyleBackColor = true;
+            this.btnNextMonth.Click += new System.EventHandler(this.btnNextMonth_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Controls.Add(this.button8);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.button5);
@@ -75,26 +97,8 @@
             this.panel4.Controls.Add(this.button1);
             this.panel4.Location = new System.Drawing.Point(3, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1026, 63);
+            this.panel4.Size = new System.Drawing.Size(981, 63);
             this.panel4.TabIndex = 3;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(922, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(66, 58);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "Tháng sau";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(3, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(66, 58);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Tháng trước";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -174,11 +178,12 @@
             this.panel2.Controls.Add(this.dtpkDate);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1081, 40);
+            this.panel2.Size = new System.Drawing.Size(999, 40);
             this.panel2.TabIndex = 1;
             // 
             // nmNotify
             // 
+            this.nmNotify.Enabled = false;
             this.nmNotify.Location = new System.Drawing.Point(109, 9);
             this.nmNotify.Maximum = new decimal(new int[] {
             3600,
@@ -198,6 +203,7 @@
             0,
             0,
             0});
+            this.nmNotify.ValueChanged += new System.EventHandler(this.nmNotify_ValueChanged);
             // 
             // chkNotify
             // 
@@ -208,15 +214,18 @@
             this.chkNotify.TabIndex = 2;
             this.chkNotify.Text = "Thông báo";
             this.chkNotify.UseVisualStyleBackColor = true;
+            this.chkNotify.CheckedChanged += new System.EventHandler(this.chkNotify_CheckedChanged);
             // 
             // btnToDay
             // 
+            this.btnToDay.BackColor = System.Drawing.Color.Tomato;
             this.btnToDay.Location = new System.Drawing.Point(660, 0);
             this.btnToDay.Name = "btnToDay";
             this.btnToDay.Size = new System.Drawing.Size(109, 40);
             this.btnToDay.TabIndex = 1;
             this.btnToDay.Text = "Hôm Nay";
-            this.btnToDay.UseVisualStyleBackColor = true;
+            this.btnToDay.UseVisualStyleBackColor = false;
+            this.btnToDay.Click += new System.EventHandler(this.btnToDay_Click);
             // 
             // dtpkDate
             // 
@@ -224,16 +233,24 @@
             this.dtpkDate.Name = "dtpkDate";
             this.dtpkDate.Size = new System.Drawing.Size(250, 22);
             this.dtpkDate.TabIndex = 0;
+            this.dtpkDate.ValueChanged += new System.EventHandler(this.dtpkDate_ValueChanged);
+            // 
+            // tmNotify
+            // 
+            this.tmNotify.Enabled = true;
+            this.tmNotify.Interval = 60000;
+            this.tmNotify.Tick += new System.EventHandler(this.tmNotify_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 647);
+            this.ClientSize = new System.Drawing.Size(1029, 647);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Ứng Dụng Lịch Nhắc Việc";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -258,10 +275,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnNextMonth;
+        private System.Windows.Forms.Button btnPreviousMonth;
         private System.Windows.Forms.NumericUpDown nmNotify;
         private System.Windows.Forms.CheckBox chkNotify;
+        private System.Windows.Forms.Timer tmNotify;
     }
 }
 

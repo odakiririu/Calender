@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.nmToMinutes = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +41,6 @@
             this.nmFromHours = new System.Windows.Forms.NumericUpDown();
             this.txtJob = new System.Windows.Forms.TextBox();
             this.chkDone = new System.Windows.Forms.CheckBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes)).BeginInit();
@@ -62,6 +62,34 @@
             this.panel1.Size = new System.Drawing.Size(1029, 34);
             this.panel1.TabIndex = 0;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(944, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(82, 27);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(859, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(79, 27);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(751, 6);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(102, 24);
+            this.cbStatus.TabIndex = 3;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.nmToMinutes);
@@ -70,9 +98,9 @@
             this.panel2.Controls.Add(this.nmToHours);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.nmFromHours);
-            this.panel2.Location = new System.Drawing.Point(423, 3);
+            this.panel2.Location = new System.Drawing.Point(423, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 22);
+            this.panel2.Size = new System.Drawing.Size(321, 23);
             this.panel2.TabIndex = 2;
             // 
             // nmToMinutes
@@ -85,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 2);
+            this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 17);
             this.label2.TabIndex = 3;
@@ -123,7 +151,7 @@
             // 
             // txtJob
             // 
-            this.txtJob.Location = new System.Drawing.Point(37, 3);
+            this.txtJob.Location = new System.Drawing.Point(37, 6);
             this.txtJob.Name = "txtJob";
             this.txtJob.Size = new System.Drawing.Size(380, 22);
             this.txtJob.TabIndex = 1;
@@ -131,37 +159,12 @@
             // chkDone
             // 
             this.chkDone.AutoSize = true;
-            this.chkDone.Location = new System.Drawing.Point(13, 6);
+            this.chkDone.Location = new System.Drawing.Point(13, 9);
             this.chkDone.Name = "chkDone";
             this.chkDone.Size = new System.Drawing.Size(18, 17);
             this.chkDone.TabIndex = 0;
             this.chkDone.UseVisualStyleBackColor = true;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(750, 3);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(102, 24);
-            this.cbStatus.TabIndex = 3;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(859, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(79, 23);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(944, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 23);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.chkDone.CheckedChanged += new System.EventHandler(this.chkDone_CheckedChanged);
             // 
             // AJob
             // 

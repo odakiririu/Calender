@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PlanData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Job>
+    <PlanItem>
+      <Job>Thu viec</Job>
+      <FromTime>
+        <X>4</X>
+        <Y>0</Y>
+      </FromTime>
+      <ToTime>
+        <X>5</X>
+        <Y>0</Y>
+      </ToTime>
+      <Status>COMING</Status>
+      <Date>2020-02-22T21:40:47.2064017+07:00</Date>
+    </PlanItem>
+    <PlanItem>
+      <Job>thu viec 2</Job>
+      <FromTime>
+        <X>4</X>
+        <Y>0</Y>
+      </FromTime>
+      <ToTime>
+        <X>5</X>
+        <Y>0</Y>
+      </ToTime>
+      <Status>COMING</Status>
+      <Date>2020-02-22T00:00:00</Date>
+    </PlanItem>
+    <PlanItem>
+      <Job>dfd</Job>
+      <FromTime>
+        <X>4</X>
+        <Y>0</Y>
+      </FromTime>
+      <ToTime>
+        <X>6</X>
+        <Y>0</Y>
+      </ToTime>
+      <Status>COMING</Status>
+      <Date>2020-02-21T00:00:00</Date>
+    </PlanItem>
+  </Job>
+</PlanData>

@@ -13,5 +13,7 @@ namespace WindowsFormsApp1
         public static int dateWidthButton = 81;
         public static int dateHeightButton = 50;
         public static int margin = 6;
+        public static int notifyTime = 1;
+        public static int notifyTimeOut = 10000;
     }
 }
