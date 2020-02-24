@@ -9,3 +9,14 @@ D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Plan.resources
 D:\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AJob.resources
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\Lich.csprojAssemblyReference.cache
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AJob.resources
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Plan.resources
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\Lich.csproj.GenerateResource.cache
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\NGUYENDUC\Desktop\Calendar\Calender\Ung dung lich\Ung Dung Lich\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
