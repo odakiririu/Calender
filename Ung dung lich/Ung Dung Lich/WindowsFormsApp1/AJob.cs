@@ -56,7 +56,14 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            Job.Job = txtJob.Text;
+            Job.FromTime = new Point((int)nmFromHours.Value, (int)nmFormMinutes.Value);
+            Job.ToTime = new Point((int)nmToHours.Value, (int)nmToMinutes.Value);
+            Job.Status = PlanItem.ListStatus[cbStatus.SelectedIndex];
+            if (edited != null)
+            {
+                edited(this, new EventArgs());
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
