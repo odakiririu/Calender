@@ -18,7 +18,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            Notify = new NotifyIcon();
+            tmNotify.Start();
+            appTime = 0;
             LoadMatrixCalender();
             try
             {
@@ -43,10 +44,10 @@ namespace WindowsFormsApp1
             });
         }
         #region Pepperties
-        NotifyIcon notify;
-        public NotifyIcon Notify { get => notify; set => notify = value; }
-
         private string filePath = "filedata.xml";
+
+        private int appTime;
+        public int AppTime { get => appTime; set => appTime = value; }
 
         private List<List<Button>> matrix;
         public List<List<Button>> Matrix { get => matrix; set => matrix = value; }
@@ -77,15 +78,6 @@ namespace WindowsFormsApp1
                 oldBtn = new Button() { Width = 0, Height = 0, Location = new Point(-Const.margin, oldBtn.Location.Y + Const.dateHeightButton) };
             }
             SetDefaultDate();
-        }
-
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty((sender as Button).Text))
-                return;
-
-            Plan dailyPL = new Plan(new DateTime(dtpkDate.Value.Year, dtpkDate.Value.Month, Convert.ToInt32((sender as Button).Text)), Job);
-            dailyPL.ShowDialog();
         }
 
         // hàm đếm số ngày trong tháng
@@ -155,6 +147,14 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty((sender as Button).Text))
+                return;
+
+            Plan dailyPL = new Plan(new DateTime(dtpkDate.Value.Year, dtpkDate.Value.Month, Convert.ToInt32((sender as Button).Text)), Job);
+            dailyPL.ShowDialog();
+        }
         private void SerializeToXML(object data, string filePath)
         {
             FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -210,10 +210,21 @@ namespace WindowsFormsApp1
 
         private void tmNotify_Tick(object sender, EventArgs e)
         {
-            if (job == null || Job.Job == null) { return; }
+            if (!chkNotify.Checked)
+                return;
+
+            appTime++;
+
+            if (appTime < Const.notifyTime )
+                return;
+            if (job == null || Job.Job == null)
+                return;
+
             DateTime curentDate = DateTime.Now;
             List<PlanItem> todayJobs = Job.Job.Where(p => p.Date.Year == curentDate.Year && p.Date.Month == curentDate.Month && p.Date.Day == curentDate.Day).ToList();
-            Notify.ShowBalloonTip(Const.notifyTimeOut, "Thông báo!!!",string.Format("Có {0} việc trong ngày",todayJobs.Count),ToolTipIcon.Info);
+            Notify.ShowBalloonTip(Const.notifyTimeOut, "Thông báo!!!", string.Format("Có {0} việc trong ngày", todayJobs.Count), ToolTipIcon.Info);
+
+            appTime = 0;
         }
 
         private void nmNotify_ValueChanged(object sender, EventArgs e)

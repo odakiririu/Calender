@@ -48,6 +48,7 @@
             this.btnToDay = new System.Windows.Forms.Button();
             this.dtpkDate = new System.Windows.Forms.DateTimePicker();
             this.tmNotify = new System.Windows.Forms.Timer(this.components);
+            this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -241,6 +242,12 @@
             this.tmNotify.Interval = 60000;
             this.tmNotify.Tick += new System.EventHandler(this.tmNotify_Tick);
             // 
+            // Notify
+            // 
+            this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
+            this.Notify.Text = "notifyIcon1";
+            this.Notify.Visible = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,6 +287,7 @@
         private System.Windows.Forms.NumericUpDown nmNotify;
         private System.Windows.Forms.CheckBox chkNotify;
         private System.Windows.Forms.Timer tmNotify;
+        private System.Windows.Forms.NotifyIcon Notify;
     }
 }
 
